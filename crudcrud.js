@@ -36,6 +36,16 @@ window.addEventListener("DOMContentLoaded", ()=>{
         console.log(error)
     })
 })
+function deleteUser(userId) {
+    axios.deleteUser("https://crudcrud.com/api/9ede535b57d441c2bb98707fdecf27cd/data" , obj)
+      .then(response => {
+        // Remove the user detail from the website on successful deletion
+        showUserOnScreen(response.userId)
+      })
+      .catch(error => {
+        console.error('Error deleting user:', error);
+      });
+  }
 
 function showUserOnScreen(obj){
     const parentELem = document.getElementById('listOfitems')
